@@ -40,14 +40,7 @@ var GithubWebhook = function(options) {
 			return next();
 		}
 
-		function reportError(message) {
-			// respond error to sender
-//			res.status(400).send({
-//				error: message
-//			});
-
-			// emit error
-console.log('error...', message);
+		function reportError(message) {;
 			githookHandler.emit('error', {
                 error: new Error(message)
             }, req, res, next);
