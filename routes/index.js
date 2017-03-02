@@ -7,8 +7,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/deploy', function(req, res, next) {
-  var GithubWebHook = require('express-github-webhook');
-  var webhookHandler = GithubWebHook({ path: '/', secret: 'hex' });
   // Now could handle following events
   webhookHandler.on('*', function (event, repo, data) {
     console.log('---------start(*)-------');
